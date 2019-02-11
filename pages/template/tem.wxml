@@ -1,0 +1,24 @@
+<template name="fixBox">
+  <view class="fix-box">
+    <button class="fix-item" open-type="contact">
+      <image src='/images/online.png' class="fix-img"></image>
+    </button>
+    <view class="fix-item" bindtap='call'>
+      <image src='/images/phone.png' class="fix-img"></image>
+    </view>
+  </view>
+</template>
+<template name="returnHome">
+  <view class="return-home" bindtap='returnHome'>
+    <image src='/images/icon/home-icon.png' class="home-icon"></image>
+    <text>返回首页</text>
+  </view>
+</template>
+<template name="usePhoto">
+  <view class="pop-box">
+    <view class="pop-container">
+       <text>请点击授权使用，开启小程序保存到相册功能</text>
+        <button class="btn-photo" open-type="openSetting" bindopensetting="openPhoto">授权使用</button>
+    </view>
+  </view>
+</template>

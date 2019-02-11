@@ -1,0 +1,24 @@
+<view>
+  <view class="registe-box flex-col-start">
+    <view class="flex-row register-line flex-middle">
+      <text>+86</text>
+      <input type='number' value='{{phone}}' class="phone-input" placeholder='请输入手机号码' bindinput='handleChangePhone'></input>
+    </view>
+    <view class="flex-row register-line flex-middle">
+      <text>验证码：</text>
+      <input class="code-input" type="number" placeholder='请输入验证码' value='{{codeMa}}' bindinput='handleCode'></input>
+      <view class="code" wx:if="{{codeShow==0}}" bindtap='getCode'>获取验证码</view>
+      <view class="code-time" wx:if="{{codeShow==1}}">{{time}}s</view>
+      <view class="code" bindtap='getCode' wx:if="{{codeShow==2}}">重获验证码</view>
+    </view>
+     <view class="flex-row flex-start flex-middle" style='height:120rpx;'>
+      <view class="icon-check" bindtap='checkAgree'>
+        <image src='/images/icon-uncheck.png' wx:if="{{agree==0}}"></image>
+        <image src='/images/icon-check.png' wx:if="{{agree==1}}"></image>
+      </view>
+      <text>我已阅读并同意</text>
+      <text style='color:#9cc829;margin-left:10rpx;' bindtap='agreement'>注册协议</text>
+    </view>
+    <view class="register-btn" bindtap='registeSubmit'>立即注册</view>
+  </view>
+</view>

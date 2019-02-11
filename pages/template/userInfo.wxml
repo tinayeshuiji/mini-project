@@ -1,0 +1,8 @@
+<template name="userInfo">
+    <view class="pay-box" >
+        <view class="pay-order">
+            <text class="confirm-msg">小程序需要获取用户信息权限  \n 请点击确认授权</text>
+            <button class="btn" open-type="getUserInfo" bindgetuserinfo="getUser">确认授权</button>
+        </view>
+    </view>
+</template>

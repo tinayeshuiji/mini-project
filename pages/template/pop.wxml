@@ -1,0 +1,84 @@
+<template name="paySuccess">
+  <view class="pop-box">
+    <view class="pop-container">
+      <view class="success-title">
+        <!-- <image bindtap='handleClose' src='/images/icon-close.png' class="icon-close"></image> -->
+        支付成功
+      </view>
+      <view class="success-content">
+        <image src='/images/icon-success.png' class="icon-success"></image>
+        <text>支付成功！\n 点击确认返回订单详情</text>
+        <view class="success-btn" bindtap='orderSuccess'>确认</view>
+      </view>
+    </view>
+  </view>
+</template>
+<template name="payFail">
+  <view class="pop-box">
+    <view class="pop-fail">
+      <view class="fail-title">
+        <!-- <image bindtap='handleClose' src='/images/icon-close.png' class="icon-close"></image> -->
+        支付失败
+      </view>
+      <view class="fail-content">
+        <text>支付失败！\n 点击确认返回订单列表</text>
+        <view class="fail-btn" bindtap='orderCancel'>确认</view>
+      </view>
+    </view>
+  </view>
+</template>
+<template name="poster">
+  <view class="poster-box flex-row flex-center flex-middle">
+    <view class="poster-container flex-col flex-between flex-middle">
+      <view class="flex-row flex-end flex-middle" style='width:100%;height:100rpx;padding:0 20rpx;'>
+        <image src='/images/close.png' class="poster-close" bindtap="posterClose"></image>
+      </view>
+      <image src='{{shareHappy}}' class="poster"></image>
+      <view class="poster-btns  flex-col flex-end flex-middle">
+        <view class="poster-btn">保存图片</view>
+        <view style='color:#888;font-size:24rpx;height:60rpx;line-height:60rpx;'>保存图片到相册可以分享到朋友圈</view>
+      </view>
+    </view>
+  </view>
+</template>
+<template name="usePhoto">
+  <view class="pop-box">
+    <view class="pop-container">
+       <text>请点击授权使用，开启小程序保存到相册功能</text>
+        <button class="btn-photo" open-type="openSetting" bindopensetting="openPhoto">授权使用</button>
+    </view>
+  </view>
+</template>
+<template name="erweima">
+  <view class="poster-box flex-row flex-center flex-middle">
+    <view class="poster-container flex-col flex-start flex-middle">
+      <view class="flex-row flex-end flex-middle" style='width:100%;height:100rpx;padding:0 20rpx;'>
+        <image src='/images/close.png' class="poster-close" bindtap="erweimaClose"></image>
+      </view>
+      <image src='{{erweimaUrl}}' class="erweima"></image>
+      
+    </view>
+  </view>
+</template>
+<template name="location">
+  <view class="pop-box">
+    <view class="pop-container">
+      <view class="mini-box" style='padding-top:20%;'>
+        <text>请点击授权，开启定位功能</text>
+        <button class="btn-photo" open-type="openSetting" bindopensetting="openLoation">授权使用</button>
+      </view>
+    </view>
+  </view>
+</template>
+<template name="ad">
+  <view class="poster-box flex-row flex-center flex-middle">
+    <view class="poster-container flex-col flex-start flex-middle">
+      <view class="flex-row flex-end flex-middle" style='width:100%;height:100rpx;padding:0 20rpx;'>
+        <image src='/images/close.png' class="poster-close" bindtap="adClose"></image>
+      </view>
+      <view style='font-size:32rpx;text-align:center;padding:0 20rpx;'>{{adList.name}}</view>
+      <image src='{{adList.url}}' class="erweima" bindtap='goGoodsDetail' data-id="{{adList.goodId}}"></image>
+      
+    </view>
+  </view>
+</template>

@@ -1,0 +1,70 @@
+.fix-box{
+  position: fixed;
+  right:20rpx;
+  bottom:100rpx;
+  width:100rpx;
+  height:240rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* background: rgba(0,0,0,.3); */
+}
+.fix-item{
+  width:100rpx;
+  height:100rpx;
+  border-radius: 50%;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+ /* background: rgba(59,193,243,0.8); */
+}
+.fix-img{
+  width:100%;
+  height: 100%;
+  display: block;
+  
+}
+.fix-item::after {
+    display: none;
+}
+.fix-item text{
+  font-size: 12px;
+  color: #fff;
+}
+
+
+.return-home{
+   position: fixed;
+  right:20rpx;
+  bottom:130rpx;
+    width:135rpx;
+  height:135rpx;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ background: rgba(59,193,243,0.8);
+}
+.return-home text{
+  font-size: 12px;
+  color: #fff;
+}
+.home-icon{
+    width:32rpx;
+  height:32rpx;
+  display: block;
+  margin-bottom: 20rpx;
+}
+.pop-box { width: 100%; height: 100%; position: absolute; left: 0; top:0; background: rgba(0,0,0,.3); z-index: 10;}
+.pop-container { width:80%; height:400rpx; position: absolute; left:10%; top:50%; margin-top: -200rpx;  background-color: #fff; z-index: 100; border-radius: 10rpx; display: flex;flex-direction: column;justify-content: center;align-items: center; }
+.pop-container text{
+  font-size: 15px;
+  text-align: center;
+  display: block;
+  padding:0 100rpx;
+  line-height: 50rpx;
+}
+.btn-photo { width:320rpx; height:80rpx; line-height: 80rpx; border-radius: 40rpx; background-color: #ff2a00; text-align: center; color:#fff; font-size: 13px; margin: 100rpx auto 0 auto; outline: none; border: none;}

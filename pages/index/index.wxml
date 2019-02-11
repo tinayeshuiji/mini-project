@@ -1,0 +1,30 @@
+<view>
+  <view class='banners'>
+    <swiper autoplay="true" circular="true" interval="3000" duration="2000">
+      <block wx:for="{{banner}}" wx:for-index="index" wx:key="{{index}}" wx:for-item='item'>
+        <swiper-item>
+        <image class='banners-img' src='{{item.img}}' mode="aspectFill"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='zixun'>
+    <view class="zixun-left">
+      <text>喜报</text>
+      <image class='zixun-img' src='/images/icon-call.png'></image>
+    </view>
+    <swiper class="zixun-box" autoplay="true" vertical='true' interval="5000" duration="300" circular="true">
+      <block wx:for="{{information}}" wx:for-index="index" wx:key="{{index}}" wx:for-item="item">
+        <swiper-item>
+          <view class='zixun-text'>{{item.content}}</view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+
+</view>
+<import src="../template/tem.wxml" />
+<template is="fixBox"></template>
+<!-- 模板传值 -->
+<!-- <template is="pwd" data="{{pwdShow,totalMoney,pwdList,storeName}}" /> -->

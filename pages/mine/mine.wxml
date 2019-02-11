@@ -1,0 +1,11 @@
+<view>
+  <navigator url="/pages/rich/rich" class="mine-line">1.富文本</navigator>
+  <view  class="mine-line" bindtap='selectArea'>2.定位</view>
+   <view  class="mine-line" bindtap='getCurrentCity'>3.获取当前城市:{{city}}</view>
+    <view  class="mine-line" bindtap='getCurrentCity'>4.input框</view>
+    
+  
+
+</view>
+<import src="../template/pop.wxml" />
+<template is="location" wx:if="{{locationShow}}" />
