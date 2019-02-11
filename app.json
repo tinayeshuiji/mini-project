@@ -7,6 +7,7 @@
     "pages/login/login",
     "pages/registe/registe",
     "pages/rich/rich",
+    "pages/list/list",
     "pages/logs/logs"
   ],
   "window":{

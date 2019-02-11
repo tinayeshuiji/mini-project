@@ -71,3 +71,87 @@
   display: block;
   margin-right: 10rpx;
 }
+.pre-container{
+   background: #fff;
+  width: 100%;
+  padding-left: 20rpx;
+  white-space: nowrap;
+  height: 320rpx;
+ 
+}
+.pre-list{
+   width: 1200rpx;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+padding:10rpx 0;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  
+}
+.pre-item{
+  width:260rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 20rpx;
+}
+.pre-img{
+  width:120rpx;
+  height: 120rpx;
+  display: block;
+  border-radius: 50%;
+}
+.pre-price text:nth-child(1){
+  color: #ff0000;
+  font-size: 12px;
+
+}
+.pre-price text:nth-child(2){
+  color: #ff0000;
+  font-size: 16px;
+
+}
+.pre-name{
+  font-size: 14px;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #000;
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-overflow:ellipsis; white-space:nowrap; overflow:hidden; 
+}
+.pre-title{
+  height:100rpx;
+  width: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+  background: #fff;
+}
+.pre-title text{
+  font-size: 20px;
+  margin: 0 20rpx
+}
+.pre-icon{
+  display: block;
+  width:48rpx;
+  height: 48rpx;
+}
+.recommend{
+  margin: 10rpx 0;
+
+}
+.pre-weight{
+  display: block;
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 12px;
+  color:#999;
+  text-align: center;
+  text-overflow:ellipsis; white-space:nowrap; overflow:hidden; 
+}

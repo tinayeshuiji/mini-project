@@ -1,10 +1,44 @@
 <view>
   <navigator url="/pages/rich/rich" class="mine-line">1.富文本</navigator>
-  <view  class="mine-line" bindtap='selectArea'>2.定位</view>
-   <view  class="mine-line" bindtap='getCurrentCity'>3.获取当前城市:{{city}}</view>
-    <view  class="mine-line" bindtap='getCurrentCity'>4.input框</view>
-    
-  
+  <view class="mine-line" bindtap='selectArea'>2.定位</view>
+  <view class="mine-line" bindtap='getCurrentCity'>3.获取当前城市:{{city}}</view>
+  <view class="mine-line flex-row  flex-middle">
+    <view>4.input框:</view>
+    <input placeholder='请输入手机号码' name="phone" class="input-box" bindinput='changePhone' value='{{phone}}' type="number"></input>
+    <view class="code" wx:if="{{codeShow==0}}" bindtap='getCode'>获取验证码</view>
+    <view class="code-send" wx:if="{{codeShow==1}}">验证码已发送</view>
+  </view>
+  <view class="mine-line flex-row  flex-middle">
+    <view>5.省市区:</view>
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker">
+        {{region[0]}}{{region[1]}}{{region[2]}}
+      </view>
+    </picker>
+  </view>
+  <navigator class="mine-line" url="/pages/list/list">6.页面触底,下拉刷新</navigator>
+  <view class="mine-line" bindtap='wxPay'>7.微信支付</view>
+  <view style="padding:0 20rpx; border-bottom:1px solid #e5e5e5;">
+    <view style="height:60rpx; line-height:60rpx;">8.上传图片</view>
+    <view class="server-list flex-row flex-start flex-middle">
+      <view class="server-box flex-row flex-center flex-middle" wx:for="{{refund_data_1.pic_list}}" wx:fot-item="item" wx:for-index="index" wx:key="{{index}}">
+        <text class="delete-pic" bindtap="deleteImage" data-index="{{index}}" >X</text>
+        <image src='{{item}}' class="photo"></image>
+      </view>
+      <view class="server-box flex-row flex-center flex-middle" bindtap='upLoad'  wx:if="{{!refund_data_1.pic_list||refund_data_1.pic_list.length<6}}">
+        <image src='/images/server01.png' class="server01" ></image>
+      </view>
+    </view>
+    <view style='color:#9f9f9f;'>（最多上传6张）</view>
+
+
+
+  </view>
+   <view class="mine-line" bindtap='backPrepage'>9.返回前一页不刷新页面,本地存储</view>
+
+
+
+
 
 </view>
 <import src="../template/pop.wxml" />

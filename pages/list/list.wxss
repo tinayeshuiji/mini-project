@@ -1,0 +1,5 @@
+@import "../template/goodItem.wxss";
+.good-list{
+  width:94%;
+  margin: 0 auto;
+}

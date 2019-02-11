@@ -1,0 +1,6 @@
+<view>
+  <scroll-view class="good-list">
+    <template is="goodItem" data="{{footList}}"/> 
+  </scroll-view>
+</view>
+<import src="../template/goodItem.wxml"/> 

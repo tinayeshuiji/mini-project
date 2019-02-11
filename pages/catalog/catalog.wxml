@@ -1,2 +1,27 @@
-<!--pages/catalog/catalog.wxml-->
-<text>pages/catalog/catalog.wxml</text>
+<view class="cat-container">
+  <view class="cat-list">
+    <scroll-view scroll-y="true" style="height: {{height}}px;background: #fff" class="cat-left-box">
+      <view class="cat-left">
+        <text class="{{activeIndex==index?'active':''}}" wx:for="{{titleList}}" wx:for-index="index" wx:key="{{index}}" wx:for-item="item" bindtap='changeTitle' data-id="{{item.id}}" data-index="{{index}}">{{item.name}}</text>
+      </view>
+    </scroll-view>
+    <scroll-view scroll-y="true" style="height: {{height}}px;background: #fff" class="cat-right-box" lower-threshold="30" bindscrolltolower="lower">
+      <view class="cat-right">
+        <navigator url="/pages/goods/goods?id={{item.id}}" class="cat-item" wx:for="{{goods_list}}" wx:for-index="index" wx:key="{{index}}" wx:for-item="item" wx:if="{{goods_list.length!==0}}">
+          <image src='{{item.pic_url}}' class="cat-img"></image>
+          <view class="cat-content">
+            <view class="mb-10 text-more-2" style="height:2.8em;line-height:1.4;">{{item.name}}</view>
+            <view class="mb-10" style="height:1.4em;line-height:1.4;" wx:if="{{cat_id!=='5'}}">库存：{{item.goods_num+item.unit}}</view>
+            <view class="flex-row">
+              <view class="flex-grow-1" style="color:#ff334b">￥{{item.price}}</view>
+              <view class="flex-grow-0 fs-sm" style="color:#999;">已售{{item.sales}}</view>
+            </view>
+
+          </view>
+        </navigator>
+        <view class="no-data-tip" wx:if="{{goods_list.length==0}}">该类目暂无内容</view>
+
+      </view>
+    </scroll-view>
+  </view>
+</view>

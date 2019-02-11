@@ -21,6 +21,26 @@
       </block>
     </swiper>
   </view>
+   <view  class="recommend" >
+        <view class="pre-title">
+          <text>横向滚动</text>
+        </view>
+        <scroll-view class="pre-container" scroll-x="true">
+          <view class="pre-list" style="width:{{recommendLen}}px">
+            <navigator class="pre-item" url="/pages/goods/goods?id={{item.id}}" wx:for="{{recommend_list}}" wx:for-index="index" 
+            wx:key="{{index}}" wx:for-item="item">
+              <image src='{{item.pic_url}}' class="pre-img"></image>
+              <text class="pre-name">{{item.name}}</text>
+               <text class="pre-weight">{{item.introduce}}</text>
+              <view class="pre-price">
+                <text>￥</text>
+                <text>{{item.price}}</text>
+              </view>
+              <!-- <text class="pre-weight">重量：{{item.weight}}</text> -->
+            </navigator>
+          </view>
+        </scroll-view>
+      </view>
 
 
 </view>

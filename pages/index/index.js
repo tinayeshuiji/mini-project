@@ -17,15 +17,14 @@ Page({
         id: 3
       }
     ],
-    information: [
-      {
-      content: "12-12恭喜林总推荐王总抵押贷放款140万！",
-      created_at: 1544603680,
-      id: 12,
-      listorder: 1,
-      status: 1,
-      updated_at: 1544604212
-    },
+    information: [{
+        content: "12-12恭喜林总推荐王总抵押贷放款140万！",
+        created_at: 1544603680,
+        id: 12,
+        listorder: 1,
+        status: 1,
+        updated_at: 1544604212
+      },
       {
         content: "12-13恭喜林总推荐王总抵押贷放款100万！",
         created_at: 1544603680,
@@ -34,7 +33,79 @@ Page({
         status: 1,
         updated_at: 1544604212
       },
-    ]
+    ],
+    recommend_list: [{
+      goods_num: 41,
+      id: "186",
+      introduce: "连江黄岐海鲜年货大礼包，全国配送",
+      name: "年货大礼包A套餐",
+      num: "62",
+      original_price: "838.00",
+      pic_url: "https://mini.maxcc.com.cn/web/uploads/image/57/575b1cf4e5bab5f14db257a4787535a4.jpg",
+      price: "780.00",
+      sales: "131套",
+      unit: "套",
+      virtual_sales: "69",
+      weight: "0g"
+    },
+      {
+        goods_num: 41,
+        id: "186",
+        introduce: "连江黄岐海鲜年货大礼包，全国配送",
+        name: "年货大礼包B套餐",
+        num: "62",
+        original_price: "838.00",
+        pic_url: "https://mini.maxcc.com.cn/web/uploads/image/57/575b1cf4e5bab5f14db257a4787535a4.jpg",
+        price: "780.00",
+        sales: "131套",
+        unit: "套",
+        virtual_sales: "69",
+        weight: "0g"
+      },
+      {
+        goods_num: 41,
+        id: "186",
+        introduce: "连江黄岐海鲜年货大礼包，全国配送",
+        name: "年货大礼包C套餐",
+        num: "62",
+        original_price: "838.00",
+        pic_url: "https://mini.maxcc.com.cn/web/uploads/image/57/575b1cf4e5bab5f14db257a4787535a4.jpg",
+        price: "780.00",
+        sales: "131套",
+        unit: "套",
+        virtual_sales: "69",
+        weight: "0g"
+      },
+      {
+        goods_num: 41,
+        id: "186",
+        introduce: "连江黄岐海鲜年货大礼包，全国配送",
+        name: "年货大礼包D套餐",
+        num: "62",
+        original_price: "838.00",
+        pic_url: "https://mini.maxcc.com.cn/web/uploads/image/57/575b1cf4e5bab5f14db257a4787535a4.jpg",
+        price: "780.00",
+        sales: "131套",
+        unit: "套",
+        virtual_sales: "69",
+        weight: "0g"
+      },
+      {
+        goods_num: 41,
+        id: "186",
+        introduce: "连江黄岐海鲜年货大礼包，全国配送",
+        name: "年货大礼包E套餐",
+        num: "62",
+        original_price: "838.00",
+        pic_url: "https://mini.maxcc.com.cn/web/uploads/image/57/575b1cf4e5bab5f14db257a4787535a4.jpg",
+        price: "780.00",
+        sales: "131套",
+        unit: "套",
+        virtual_sales: "69",
+        weight: "0g"
+      }
+    ],
+    recommendLen:0
 
 
 
@@ -44,19 +115,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var that=this;
+    var that = this;
     // 获取屏幕高度
     wx.getSystemInfo({
-      success: function (res) {
+      success: function(res) {
         that.setData({
           height: res.windowHeight
         })
       }
     })
+    var recommend = that.data.recommend_list;
+    that.setData({
+      recommendLen: recommend.length * 140
+    })
 
   },
   // 拨打电话
-  call: function () {
+  call: function() {
     wx.makePhoneCall({
       phoneNumber: '13696882665'
     })

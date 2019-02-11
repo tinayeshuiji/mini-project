@@ -1,0 +1,34 @@
+<!-- 商品列表 -->
+<template name="goodItem">
+  <view class="recommend-item flex-row flex-start flex-middle" wx:for="{{footList}}" wx:for-index="index" wx:key="{{index}}" wx:for-item="item">
+    <view class="recommend-pic" bindtap='goDetail'  data-id="{{item.goodsId}}">
+      <image src='{{item.picUrl}}'></image>
+      <text>抢购</text>
+    </view>
+    <view class="recommend-content flex-col flex-between">
+      <view class="flex-row flex-bwtween flex-top">
+        <view style='width:calc(100% - 100rpx);'>
+          <view class="text-more-2" style="font-size:32rpx;">{{item.name}}</view>
+          <view class="text-more" style="color:#b1b1b1;">{{item.brief}}</view>
+        </view>
+        <view style="color:#ec2d2d;width:100rpx; text-align:right;" bindtap='deleteFoot' data-id="{{item.id}}" data-goodid="{{item.goodsId}}">移除</view>
+      </view>
+      <view class="flex-row flex-between flex-middle" style="width:100%;height:60rpx;">
+        <view class="flex-row flex-start flex-bottom">
+          <view class="new-price">
+            <text>￥</text>
+            <text>{{item.retailPrice}}</text>
+          </view>
+          <!-- <view class="origin-price">
+            ￥{{item.retailPrice}}
+          </view> -->
+        </view>
+        <view class="flex-row flex-end flex-middle add-box">
+          <!-- <image src='/images/icon-reduce.png' class="icon-add" wx:if="{{item.carCount>0}}" bindtap='reduce' data-id="{{item.goodsId}}" data-num="{{item.carCount}}" data-index="{{index}}"></image>
+          <input type="number" value="{{item.carCount}}" class="num" wx:if="{{item.carCount>0}}"></input> -->
+          <image src='/images/icon-add.png' class="icon-add" bindtap='changeCart' data-id="{{item.goodsId}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
